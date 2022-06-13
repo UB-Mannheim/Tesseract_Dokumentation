@@ -45,12 +45,14 @@ Beispiel:
 $ wget https://github.com/tesseract-ocr/tessdata_fast/raw/main/deu.traineddata
 ```
 Um den richtigen Link zu erhalten, klicken Sie die gewünschte Sprache in Github an und machen dann einen Rechtsklick auf „View Raw“ oder „Download“ und wählen die Option „Link-Adresse kopieren“ aus.  
-Es gibt eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md).
-[**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)
-[**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)
-[**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)
-[**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)
-Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunterladen. 
+
+Sie können eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md) auf Github finden.  
+Die Modelle finden Sie unter den folgenden Links:
+[**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)  
+[**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)  
+[**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)  
+[**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)  
+Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunter.  
 -> Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.
 -> vorhandene Sprachen können auch in der Kommandozeile über den Befehl gefunden werden:  
 ```
