@@ -3,8 +3,8 @@
 ## 1. Installation der Software
 
 ### 1.1 Eventuell: **Windows Subsystem for Linux (WSL)** installieren:
-**Alternative 1:** Sie können Debian oder Ubuntu einfach als App im Windows Store herunterladen.
-**Alternative 2:*Oder Sie laden es über die Kommandozeile herunter:  
+**Alternative 1:** Sie können Debian oder Ubuntu einfach als App im Windows Store herunterladen.  
+**Alternative 2:** Oder Sie laden es über die Kommandozeile herunter:  
 -> PowerShell aufrufen und eingeben (ggf. als Administrator ausführen): 
 ```
 $ wsl --install
@@ -28,7 +28,7 @@ $ sudo apt update
 $ Sudo apt ugrade
 ```
 
-### 1.2 Falls das Endgerät sowieso Linux nutzt, kann Punkt 1.1 übersprungen werden
+### 1.2 Falls das Endgerät sowieso Linux nutzt, kann Punkt 1.1 übersprungen werden  
  **Installation von Tesseract**  
 -> In Linux-Kommandozeile eingeben:  
 ```
@@ -38,27 +38,27 @@ $sudo apt install tesseract-ocr
 -> Mit Enter bestätigen 
 -> Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
 ```
-wget <Link>
+$ wget <Link>
 ```
 Beispiel:  
 ```
-wget https://github.com/tesseract-ocr/tessdata_fast/raw/main/deu.traineddata
+$ wget https://github.com/tesseract-ocr/tessdata_fast/raw/main/deu.traineddata
 ```
 Um den richtigen Link zu erhalten, klicken Sie die gewünschte Sprache in Github an und machen dann einen Rechtsklick auf „View Raw“ oder „Download“ und wählen die Option „Link-Adresse kopieren“ aus.  
-Eine Liste aller verfügbaren Sprachen und Schriften (Standardmodelle) findet man unter: https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md
-**Schriften (Fast-Modelle):** https://github.com/tesseract-ocr/tessdata_fast/tree/main/script
-**Sprachen (Fast-Modelle):** https://github.com/tesseract-ocr/tessdata_fast
-**Schriften (Best-Modelle):** https://github.com/tesseract-ocr/tessdata_best/tree/main/script
-**Sprachen (Best-Modelle):** https://github.com/tesseract-ocr/tessdata_best
-Die **Spezialmodelle der UB Mannheim** finden Sie unter folgendem Link: https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/
+Es gibt eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md).
+[**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)
+[**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)
+[**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)
+[**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)
+Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunterladen. 
 -> Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.
 -> vorhandene Sprachen können auch in der Kommandozeile über den Befehl gefunden werden:  
 ```
-apt search tesseract- lang
+$ apt search tesseract- lang
 ```
 -> für vorhandene Schriften funktioniert folgender Link: 
 ```
-apt search tesseract- script
+$ apt search tesseract- script
 ```
 -> Damit die heruntergeladenen Modelle auch im richtigen Ordner abgelegt werden, kann über folgenden Befehl herausgefunden werden, wo die Modelle liegen:  
 ```
@@ -81,9 +81,9 @@ Beispiel:
 $ sudo mv GT4HistOCR_0.705_440562_2193500.traineddata GT4HistOCR.traineddata
 ```
 Alternativ können auch in WSL, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
-Geben Sie dafür in den Begriff „\\wsl$“ als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: \\wsl$\Debian\usr\share\tesseract-ocr\4.00\tessdata.  
+Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\wsl$\Debian\usr\share\tesseract-ocr\4.00\tessdata".   
 Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und klicken anschließend entweder auf „View Raw“ oder „Download“ und laden das Modell herunter. Jetzt können Sie es aus dem Download-Ordner ausschneiden und in den Tessdata-Ordner einfügen. Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.
-Welches Modell soll ich auswählen?
+Welches Modell soll ich auswählen?  
 - Sprachmodelle wurden in der Vergangenheit gerne eingesetzt für OCR, jedoch ist die OCR damit häufig lückenhaft, da in einem deutschen Text auch französische oder italienische Wörter vorkommen können. Ihnen liegt meist auch ein Wörterbuch zugrunde, mit dem Ergebnisse automatisch abgeglichen werden.  
 - Aufgrund dessen wurden Schriftmodelle trainiert, da ein Modell für lateinische Schrift auch jedes Wort in lateinischer Schrift lesen kann egal in welcher Sprache.  
 - Die Spezialmodelle erkennen weitere Besonderheiten und so erzielt man mit ihnen häufig das beste Ergebnis.  
