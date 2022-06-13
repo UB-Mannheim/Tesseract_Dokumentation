@@ -131,7 +131,7 @@ $ find -name \*.<Bilddateientyp> | while read f; do tesseract -l <Modell> $f ${f
 -> erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
 Beispiel:  
 ```
-lwill@ubnote13:/mnt/c/Users/lwill/Documents/Larissa Will/OCR Tests/Test_Stapelverarbeitung$ find -name \*.jpg | while read f; do tesseract -l deu $f ${f%.jpg}; done
+muster@ubnoteX:/mnt/c/Users/muster/Documents/OCRTests/Test_Stapelverarbeitung$ find -name \*.jpg | while read f; do tesseract -l deu $f ${f%.jpg}; done
 ```
 2. Option zur parallelen Verabeitung: 
 ```
@@ -139,7 +139,7 @@ $ find -name \*.<Bilddateientyp> -maxdepth 1 | parallel -j 4 --progress 'tessera
 ```
 Beispiel:
 ```
-lwill@ubnote13:/mnt/c/Users/lwill/Documents/Larissa Will/OCR Tests/Test_Stapelverarbeitung$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
+muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR Tests/Test_Stapelverarbeitung$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
 ```
 3. Option über fd-find (hierfür muss zunächst fd-find installiert werden): 
 ```
@@ -151,7 +151,6 @@ $ fdfind -e <Bilddateientyp> -d 1 --exec tesseract -l <Modell> {} {.} <evtl. Aus
 ```
 Beispiel:  
 ```
-lwill@ubnote13:/mnt/c/Users/lwill/Documents/Larissa Will/OCR Tests/Test_Stapelverarbeitung$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
+muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR Tests/Test_Stapelverarbeitung$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
 ```
 Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.
- 
