@@ -47,7 +47,7 @@ $ wget https://github.com/tesseract-ocr/tessdata_fast/raw/main/deu.traineddata
 Um den richtigen Link zu erhalten, klicken Sie die gewünschte Sprache in Github an und machen dann einen Rechtsklick auf „View Raw“ oder „Download“ und wählen die Option „Link-Adresse kopieren“ aus.  
 
 Sie können eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md) auf Github finden.  
-Die Modelle finden Sie unter den folgenden Links:
+Die Modelle finden Sie unter den folgenden Links:  
 [**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)  
 [**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)  
 [**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)  
