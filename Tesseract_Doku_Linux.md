@@ -10,7 +10,6 @@
 $ wsl --install
 ```
 -> Standardmäßig wird nun Ubuntu installiert; wenn eine andere Version installiert werden soll: 
-
 ```
 $ wsl --install -d <Distribution Name> #(Distribution Name = Name der Linux Distribution)
 ```
@@ -84,8 +83,9 @@ $ sudo mv GT4HistOCR_0.705_440562_2193500.traineddata GT4HistOCR.traineddata
 ```
 Alternativ können auch in WSL, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
 Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\wsl$\Debian\usr\share\tesseract-ocr\4.00\tessdata".   
-Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und klicken anschließend entweder auf „View Raw“ oder „Download“ und laden das Modell herunter. Jetzt können Sie es aus dem Download-Ordner ausschneiden und in den Tessdata-Ordner einfügen. Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.
-Welches Modell soll ich auswählen?  
+Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und klicken anschließend entweder auf „View Raw“ oder „Download“ und laden das Modell herunter. Jetzt können Sie es aus dem Download-Ordner ausschneiden und in den Tessdata-Ordner einfügen. Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.  
+
+**Welches Modell soll ich auswählen?**
 - Sprachmodelle wurden in der Vergangenheit gerne eingesetzt für OCR, jedoch ist die OCR damit häufig lückenhaft, da in einem deutschen Text auch französische oder italienische Wörter vorkommen können. Ihnen liegt meist auch ein Wörterbuch zugrunde, mit dem Ergebnisse automatisch abgeglichen werden.  
 - Aufgrund dessen wurden Schriftmodelle trainiert, da ein Modell für lateinische Schrift auch jedes Wort in lateinischer Schrift lesen kann egal in welcher Sprache.  
 - Die Spezialmodelle erkennen weitere Besonderheiten und so erzielt man mit ihnen häufig das beste Ergebnis.  
@@ -96,13 +96,13 @@ Welches Modell soll ich auswählen?
 - Zunächst Pfad angeben: dazu einfach im Fenster, in welchem die Dateien abliegen: SHIFT+Rechtsklick  „Hier Linux-Shell öffnen“ 
 - Oder Pfad händisch eingeben, aber Achtung Pfade werden in Linux anders angegeben als unter Windows:
 Beispiel für Windows Pfad: C:\Users\Larissa\Documents\Tesseract Test
-Entsprechende Benennung in Linux: Linux: /mnt/c/Users/Larissa/Documents/Tesseract Test
-- Eingabe in Linux-Konsole :
+Entsprechende Benennung in Linux: Linux: /mnt/c/Users/Larissa/Documents/Tesseract_Test
+- Geben Sie in der Linux-Kommandozeile ein:
 ```
-$ cd “/mnt/c/Users/Larissa/Documents/Tesseract Test” 
+$ cd “/mnt/c/Users/muster/Documents/Tesseract Test” 
 ```
--> Enter
--> Befehl zur Transkription: 
+-> Bestätigen Sie Ihre Eingabe mit Enter  
+-> Und geben Sie nun den Befehl zur Transkription ein: 
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> <gewünschte Formate wie pdf txt; mehrere durch Leerzeichen trennen>
 ```
@@ -117,7 +117,7 @@ $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
 
 ### 2.2 Verarbeitung mehrerer Bilder  
 Hierfür gibt es drei Optionen:  
-Für alle Optionen zuerst im Ordner der zu verarbeitenden Bild durch Shift+Rechtsklick ein Linux-Fenster öffnen, dadurch wird Pfad automatisch eingefügt.  
+Für alle Optionen zuerst im Ordner der zu verarbeitenden Bild durch Shift + Rechtsklick ein Linux-Fenster öffnen, dadurch wird Pfad automatisch eingefügt.  
 Durch folgenden Befehl, kann angezeigt werden, welche Bilder das Programm findet:  
 ```
 $ find -name \*.<Bilddateientyp z.B. jpg oder png> 
@@ -141,7 +141,7 @@ $ find -name \*.<Bilddateientyp> -maxdepth 1 | parallel -j 4 --progress 'tessera
 ```
 Beispiel:
 ```
-muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR Tests/Test_Stapelverarbeitung$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
+muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR_Tests/Test_Stapelverarbeitung$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
 ```
 3. Option über fd-find (hierfür muss zunächst fd-find installiert werden): 
 ```
@@ -153,6 +153,5 @@ $ fdfind -e <Bilddateientyp> -d 1 --exec tesseract -l <Modell> {} {.} <evtl. Aus
 ```
 Beispiel:  
 ```
-muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR Tests/Test_Stapelverarbeitung$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
+muster@ubnoteX:/mnt/c/Users/muster/Documents/OCRTests/Test_Stapelverarbeitung$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
 ```
-Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.
