@@ -5,11 +5,11 @@
 ### 1.1 Eventuell: **Windows Subsystem for Linux (WSL)** installieren:
 **Alternative 1:** Sie können Debian oder Ubuntu einfach als App im Windows Store herunterladen.  
 **Alternative 2:** Oder Sie laden es über die Kommandozeile herunter:  
--> PowerShell aufrufen und eingeben (ggf. als Administrator ausführen): 
+→ PowerShell aufrufen und eingeben (ggf. als Administrator ausführen): 
 ```
 $ wsl --install
 ```
--> Standardmäßig wird nun Ubuntu installiert; wenn eine andere Version installiert werden soll: 
+→ Standardmäßig wird nun Ubuntu installiert; wenn eine andere Version installiert werden soll: 
 ```
 $ wsl --install -d <Distribution Name> #(Distribution Name = Name der Linux Distribution)
 ```
@@ -18,10 +18,10 @@ Alle verfügbaren Linux-Distributionen anzeigen:
 $ wsl --list --online oder wsl -l -o 
 ```
 Nach der Installation befolgen Sie diese Schritte:  
--> PC neustarten  
--> Nach WSL suchen und ausführen  
--> Gewünschten Benutzername und Passwort anlegen  
--> Updaten über die Befehle:  
+→ PC neustarten  
+→ Nach WSL suchen und ausführen  
+→ Gewünschten Benutzername und Passwort anlegen  
+→ Updaten über die Befehle:  
 ```
 $ sudo apt update
 $ Sudo apt ugrade
@@ -29,13 +29,13 @@ $ Sudo apt ugrade
 
 ### 1.2 Falls das Endgerät sowieso Linux nutzt, kann Punkt 1.1 übersprungen werden  
  **Installation von Tesseract**  
--> In Linux-Kommandozeile eingeben:  
+→ In Linux-Kommandozeile eingeben:  
 ```
 $sudo apt install tesseract-ocr
 ```
--> Das Programm fragt nun, ob man benötigten Speicherplatz verwenden möchte (After this operation, 30.2 MB of additional disk space will be used. Do you want to continue? [Y/n]
--> Mit Enter bestätigen 
--> Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
+→ Das Programm fragt nun, ob man benötigten Speicherplatz verwenden möchte (After this operation, 30.2 MB of additional disk space will be used. Do you want to continue? [Y/n]
+→ Mit Enter bestätigen 
+→ Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
 ```
 $ wget <Link>
 ```
@@ -52,16 +52,16 @@ Die Modelle finden Sie unter den folgenden Links:
 [**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)  
 [**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)  
 Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunter.  
--> Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.
--> vorhandene Sprachen können auch in der Kommandozeile über den Befehl gefunden werden:  
+→ Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.
+→ vorhandene Sprachen können auch in der Kommandozeile über den Befehl gefunden werden:  
 ```
 $ apt search tesseract- lang
 ```
--> für vorhandene Schriften funktioniert folgender Link: 
+→ für vorhandene Schriften funktioniert folgender Link: 
 ```
 $ apt search tesseract- script
 ```
--> Damit die heruntergeladenen Modelle auch im richtigen Ordner abgelegt werden, kann über folgenden Befehl herausgefunden werden, wo die Modelle liegen:  
+→ Damit die heruntergeladenen Modelle auch im richtigen Ordner abgelegt werden, kann über folgenden Befehl herausgefunden werden, wo die Modelle liegen:  
 ```
 $ tesseract -l XXX XXX XXX
 ```
@@ -101,16 +101,16 @@ Entsprechende Benennung in Linux: Linux: /mnt/c/Users/Larissa/Documents/Tesserac
 ```
 $ cd “/mnt/c/Users/muster/Documents/Tesseract Test” 
 ```
--> Bestätigen Sie Ihre Eingabe mit Enter  
--> Und geben Sie nun den Befehl zur Transkription ein: 
+→ Bestätigen Sie Ihre Eingabe mit Enter  
+→ Und geben Sie nun den Befehl zur Transkription ein: 
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> <gewünschte Formate wie pdf txt; mehrere durch Leerzeichen trennen>
 ```
--> es können auch weitere Parameter spezifiert werden:  
+→ es können auch weitere Parameter spezifiert werden:  
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> --<oem ocrenginemode> --<psm pagesegmode> [Outputformate]
 ```
--> Beispiel: 
+→ Beispiel: 
 ```
 $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
 ```
