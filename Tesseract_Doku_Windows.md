@@ -5,19 +5,19 @@
 ### **1.1 Download von Tesseract über Windows Installer**  
 Die UB Mannheim stellt verschiedene [Tesseract-Installer-Versionen](https://digi.bib.uni-mannheim.de/tesseract/) bereits. Wobei die [Version 5.1](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.1.0.20220510.exe) die aktuellste ist.  
 Sie gehen nun wie folgt vor, um Tesseract unter Windows zu installieren:  
--> Datei speichern  
--> Installation ausführen durch Doppelklick oder Rechtsklick und „Ausführen“  
+→ Datei speichern  
+→ Installation ausführen durch Doppelklick oder Rechtsklick und „Ausführen“  
 Im Folgenden wird den Anweisungen des Installers gefolgt und entsprechende Einstellungen vorgenommen:  
--> Sprache auswählen  
--> Lizenzvereinbarungen annehmen  
--> Zu installierende Komponenten auswählen: ScrollView; Training Tools; Shortcuts creation, Language data; additional Script und Language data auswählen (für die meisten wahrscheinlich wichtig: Latin Script, Fraktur Script, evtl. Greek Script); additonal Language Data auswählen (für die meisten wahrscheinlich wichtig: German, Latin, English – Middle (1100-1500), evtl. Greek, French, German Fraktur, French – Middle (ca. 1400-1600), Greek Ancient (-1453), Italian, Italian (Old), Spanish, Spanish (old))  
--> Zielverzeichnis, indem das Programm gespeichert werden soll auswählen  
--> Startmenü Ordner für Programmverknüpfungen oder neuen Ordner benennen  
--> Installation fertigstellen  
+→ Sprache auswählen  
+→ Lizenzvereinbarungen annehmen  
+→ Zu installierende Komponenten auswählen: ScrollView; Training Tools; Shortcuts creation, Language data; additional Script und Language data auswählen (für die meisten wahrscheinlich wichtig: Latin Script, Fraktur Script, evtl. Greek Script); additonal Language Data auswählen (für die meisten wahrscheinlich wichtig: German, Latin, English – Middle (1100-1500), evtl. Greek, French, German Fraktur, French – Middle (ca. 1400-1600), Greek Ancient (-1453), Italian, Italian (Old), Spanish, Spanish (old))  
+→ Zielverzeichnis, indem das Programm gespeichert werden soll auswählen  
+→ Startmenü Ordner für Programmverknüpfungen oder neuen Ordner benennen  
+→ Installation fertigstellen  
 
 **Nachträgliches Herunterladen von Standardmodellen:**   
--> Best-Modelle liefern die besten Ergebnisse, jedoch langsamer als Fast Modelle. Empfehlung: Fast Modelle verwenden, da die Best Modelle kaum besser sind, jedoch deutlich langsamer. 
--> Sie können eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md) auf Github finden.  
+→ Best-Modelle liefern die besten Ergebnisse, jedoch langsamer als Fast Modelle. Empfehlung: Fast Modelle verwenden, da die Best Modelle kaum besser sind, jedoch deutlich langsamer. 
+→ Sie können eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md) auf Github finden.  
 
 **Die Modelle finden Sie unter den folgenden Links:**  
 [**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)  
@@ -26,30 +26,30 @@ Im Folgenden wird den Anweisungen des Installers gefolgt und entsprechende Einst
 [**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)  
 
 **Gehen Sie wie folgt vor:**  
--> Gewünschtes Modell auswählen (Schriften in Ordner Scripts)  
--> Downloaden  
--> Datei aus Downloadordner ausschneiden und unter "C:\Program Files\Tesseract-OCR\tessdata" (kann sich je nach Speicherort unterscheiden)  
+→ Gewünschtes Modell auswählen (Schriften in Ordner Scripts)  
+→ Downloaden  
+→ Datei aus Downloadordner ausschneiden und unter "C:\Program Files\Tesseract-OCR\tessdata" (kann sich je nach Speicherort unterscheiden)  
   
 **Nachträgliches Herunterladen von Spezialmodellen:**  
 Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunter.  
 - Für Frakturtexte können vor allem die Modelle frak2012 und Gt4HistOCR relevant sein  
 -**Gehen Sie wie folgt vor:**  
-  -> Gewünschtes Modell auswählen  
-  -> tessdata_fast/ auswählen (möglich auch tessdata_best/, jedoch sind Ergebnisse von tessdata_fast/  gleichwertig und die Texterkennung ist deutlich schneller)  
-  -> Version auswählen und Datei speichern  
-  -> Datei im Downloadordner umbenennen, da jedes mal der exakte Name angegeben werden muss um Modell zu nutzen (es empfiehlt sich z. B. Namen wie frak2021_0.905_1587027_9141630.traineddata in frak2021.traineddata zu kürzen) 
-  -> ausschneiden und unter "C:\Program Files\Tesseract-OCR\tessdata" speichern (kann sich je nach Speicherort unterscheiden)
+  → Gewünschtes Modell auswählen  
+  → tessdata_fast/ auswählen (möglich auch tessdata_best/, jedoch sind Ergebnisse von tessdata_fast/  gleichwertig und die Texterkennung ist deutlich schneller)  
+  → Version auswählen und Datei speichern  
+  → Datei im Downloadordner umbenennen, da jedes mal der exakte Name angegeben werden muss um Modell zu nutzen (es empfiehlt sich z. B. Namen wie frak2021_0.905_1587027_9141630.traineddata in frak2021.traineddata zu kürzen) 
+  → ausschneiden und unter "C:\Program Files\Tesseract-OCR\tessdata" speichern (kann sich je nach Speicherort unterscheiden)
 
 ### **1.2 Download von Tesseract Xplore**  
 [TesseractXplore](https://github.com/JKamlah/tesseractXplore) ist eine graphische Oberfläche für Tesseract, die die Handhabung deutlich erleichtert, da es ansonsten über die Kommandozeile bedient werden muss. Tesseract Xplore steht auf Github zum [Download](https://github.com/JKamlah/tesseractXplore/#win-cmdexe) zur Verfügung.
 
--> Datei speichern  
--> TesseractXplore ausführen (evtl. muss Smartscreen deaktiviert werden; Windows Sicherheit -> App-& Browsersteuerung -> Zuverlässigkeitsbasierter Schutz -> Einstellungen -> SmartScreen für Microsoft Edge deaktivieren)  
--> Lizenzabkommen annehmen  
--> Zielverzeichnis, indem das Programm gespeichert werden soll auswählen  
--> Installation fertigstellen  
--> Graphische Oberfläche funktioniert automatisch, wenn Tesseract wie in Punkt 1.1 beschrieben vorher installiert wurde, ansonsten kann es in den Settings unter „Settings“ ->  „Extra Tesseract-Settings“ über Button „Install tesseract“ nachträglich installiert werden  
--> Schriften und Sprachen nachträglich in TesseractXplore installieren; über Spalte „select model“ -> “find a new model“ -> gewünschte Sprache eingeben wie z.B. „Spanish“ und ggf. Filter einstellen (Best oder Fast und Script oder Language) -> „Download“ (funktioniert auch für Spezialmodelle)  
+→ Datei speichern  
+→ TesseractXplore ausführen (evtl. muss Smartscreen deaktiviert werden; Windows Sicherheit → App-& Browsersteuerung → Zuverlässigkeitsbasierter Schutz → Einstellungen → SmartScreen für Microsoft Edge deaktivieren)  
+→ Lizenzabkommen annehmen  
+→ Zielverzeichnis, indem das Programm gespeichert werden soll auswählen  
+→ Installation fertigstellen  
+→ Graphische Oberfläche funktioniert automatisch, wenn Tesseract wie in Punkt 1.1 beschrieben vorher installiert wurde, ansonsten kann es in den Settings unter „Settings“ →  „Extra Tesseract-Settings“ über Button „Install tesseract“ nachträglich installiert werden  
+→ Schriften und Sprachen nachträglich in TesseractXplore installieren; über Spalte „select model“ → “find a new model“ → gewünschte Sprache eingeben wie z.B. „Spanish“ und ggf. Filter einstellen (Best oder Fast und Script oder Language) → „Download“ (funktioniert auch für Spezialmodelle)  
 
 ## **2. Anwendung von Tesseract**    
 ### **2.1 Anwendung von TesseractXplore**   
@@ -96,25 +96,25 @@ Shift+Strg+X|Löscht Suchfilter|Modellsuche
 
 ## **2.2 Anwendung von Tesseract über die Kommandozeile**  
 Beispiel für Windows Pfad: "C:\Users\Larissa\Documents\Tesseract_Test"  
--> Nun öffnen Sie die Tesseract-OCR-Console:  
--> Am einfachsten ist die Anwendung, wenn man angibt, dass man die Outputdatei dort ablegt, wo sich die Inputdatei befindet:  
--> Befehl: 
+→ Nun öffnen Sie die Tesseract-OCR-Console:  
+→ Am einfachsten ist die Anwendung, wenn man angibt, dass man die Outputdatei dort ablegt, wo sich die Inputdatei befindet:  
+→ Befehl: 
 ```
 $ cd <“Pfad“>  
 ```
--> Beispiel:  
+→ Beispiel:  
 ```
 $ cd "\Users\muster\Documents\\Beispielbilder_OCR"
 ```
--> Befehl zur Transkription:  
+→ Befehl zur Transkription:  
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> <gewünschte Formate wie pdf txt; mehrere durch Leerzeichen trennen>  
 ```
--> es können auch weitere Parameter spezifiert werden:  
+→ es können auch weitere Parameter spezifiert werden:  
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> --<oem ocrenginemode> --<psm pagesegmode> [Outputformate]
 ```
--> Beispiel:  
+→ Beispiel:  
 ```
 $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
 ```
