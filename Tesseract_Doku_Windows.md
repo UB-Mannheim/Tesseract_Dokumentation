@@ -73,26 +73,27 @@ Oder über “Image Selection” die entsprechenden Bilder bzw. Ordner auswähle
 
 **Keyboard Shortcuts**   
 Das Nutzen von Shortcuts erleichtert die Handhabung von Tesseract Xplore. Die [wichtigsten Shortcuts](https://github.com/JKamlah/tesseractXplore/#gui-usage) finden Sie auch auf Github.  
-**Tasten**|**Aktion**|**Bildschirm**  
-F1   |Zu den Kivy-Einstellungen wechseln|Alle  
-F2   |Zu den App Einstellungen wechseln|Alle  
-F5   |Zum Home-Bildschirm wechseln|Alle  
-F6   |Zur Modell-Auswahl wechseln|Alle  
-F7   |Zur Modell-Suche wechseln	Alle  
-F9   |Online bzw. Offline schalten|Alle  
-F10  |Randlos schalten|Alle  
-F11  |Vollbild anschalten|Alle  
-F11  |Darkmode bzw. Lightmode anschalten|Alle  
-Strg + S |	Einstellungen speichern|Alle  
-Strg + Q |	Verlassen|Alle  
-Strg + R |	Tesseract Einstellungen zurücksetzen|Image Selection  
-Strg + O |Ausgewählten Bildordner öffnen|Image Selection  
-Strg + ‚+‘|Heranzoomen|Image Selection  
-Strg + ‚-'|Herauszoomen|Image Selection  
-Strg+Enter|Bild-Tagger ausführen|Image Selection  
-Strg+Enter|Modelsuche starten|Modellsuche  
-Shift+Strg+X|Löscht ausgewählte Bilder|Image Selection  
-Shift+Strg+X|Löscht Suchfilter|Modellsuche  
+| **Tasten**       | **Aktion**                          | **Bildschirm**  |
+|------------------|-------------------------------------|-----------------|
+| F1               | Zu den Kivy-Einstellungen wechseln  | Alle            |
+| F2               | Zu den App-Einstellungen wechsel    | Alle            |
+| F5               | Zum Home-Bildschirm wechseln        | Alle            |
+| F6               | Zur Modell-Auswahl wechseln         | Alle            |
+| F7               | Zur Modell-Suche wechseln           | Alle            |
+| F9               | Online bzw. Offline schalten        | Alle            |
+| F10              | Randlos schalten                    | Alle            |
+| F11              | Vollbild anschalten                 | Alle            |
+| F11              | Darkmode bzw. Lightmode anschalten  | Alle            |
+| Strg + S         | Einstellungen speichern             | Alle            |
+| Strg + Q         | Verlassen                           | Alle            |
+| Strg + R         | Tesseract Einstellungn zurücksetzen | Image Selection |
+| Strg + O         | Ausgewählten Bilderordner öffnen    | Image Selection |
+| Strg + '+'       | Heranzoomen                         | Image Selection |
+| Strg + '-'       | Herauszoomen                        | Image Selection |
+| Strg + Enter     | Bild-Tagger ausführen               | Image Selection |
+| Strg + Enter     | Modelsuche starten                  | Modellsuche     |
+| Shift + Strg + X | Löscht ausgewählte Bilder           | Image Selection |
+| Shift + Strg + X | Löscht Suchfilter                   | Modellsuche     |
 
 ## **2.2 Anwendung von Tesseract über die Kommandozeile**  
 Beispiel für Windows Pfad: "C:\Users\Larissa\Documents\Tesseract_Test"  
