@@ -130,7 +130,27 @@ $ find -name \*.jpg
 ```
 $ find -name \*.<Bilddateientyp> | while read f; do tesseract -l <Modell> $f ${f%.<Bilddateientyp> }<evtl. Ausgabedatei>; done
 ```
--> erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
+| **Tasten**       | **Aktion**                          | **Bildschirm**  |
+|------------------|-------------------------------------|-----------------|
+| F1               | Zu den Kivy-Einstellungen wechseln  | Alle            |
+| F2               | Zu den App-Einstellungen wechsel    | Alle            |
+| F5               | Zum Home-Bildschirm wechseln        | Alle            |
+| F6               | Zur Modell-Auswahl wechseln         | Alle            |
+| F7               | Zur Modell-Suche wechseln           | Alle            |
+| F9               | Online bzw. Offline schalten        | Alle            |
+| F10              | Randlos schalten                    | Alle            |
+| F11              | Vollbild anschalten                 | Alle            |
+| F11              | Darkmode bzw. Lightmode anschalten  | Alle            |
+| Strg + S         | Einstellungen speichern             | Alle            |
+| Strg + Q         | Verlassen                           | Alle            |
+| Strg + R         | Tesseract Einstellungn zurücksetzen | Image Selection |
+| Strg + O         | Ausgewählten Bilderordner öffnen    | Image Selection |
+| Strg + '+'       | Heranzoomen                         | Image Selection |
+| Strg + '-'       | Herauszoomen                        | Image Selection |
+| Strg + Enter     | Bild-Tagger ausführen               | Image Selection |
+| Strg + Enter     | Modelsuche starten                  | Modellsuche     |
+| Shift + Strg + X | Löscht ausgewählte Bilder           | Image Selection |
+| Shift + Strg + X | Löscht Suchfilter                   | Modellsuche     | erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
 Beispiel:  
 ```
 muster@ubnoteX:/mnt/c/Users/muster/Documents/OCRTests/Test_Stapelverarbeitung$ find -name \*.jpg | while read f; do tesseract -l deu $f ${f%.jpg}; done
