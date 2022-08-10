@@ -48,12 +48,27 @@ Nun haben Sie ein voll funktionsfähiges Linux innerhalb Windows, dass sie über
 
 ## 1. Installation der Software
 ### **Installation von Tesseract**  
+Der Paketmanager von Ubuntu bietet aktuell (Stand August 2022) nicht die neuste Tesseract Version 5 sondern nur Version 4 an. 
+Daher muss ein zusätliches Repo hinzugefügt werden:
+```
+$ sudo add-apt-repository ppa:alex-p/tesseract-ocr5
+```
 In Linux-Kommandozeile eingeben:  
 ```
 $ sudo apt install tesseract-ocr
 ```
 → Das Programm fragt nun, ob man benötigten Speicherplatz verwenden möchte (After this operation, 30.2 MB of additional disk space will be used. Do you want to continue? [Y/n]  
 → Mit Enter bestätigen 
+
+Mit folgendem Befehl lässt sich die Version überprüfen:
+```
+$ tesseract --version
+```
+
+Mit folgendem Befehl lassen sich die installierten Modelle überprüfen:
+```
+$  tesseract --list-langs
+```
 
 Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
 ```
@@ -103,8 +118,8 @@ Beispiel:
 ```
 $ sudo mv GT4HistOCR_0.705_440562_2193500.traineddata GT4HistOCR.traineddata
 ```
-Alternativ können auch in WSL, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
-Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet für Tesseract v4 der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\wsl$\Debian\usr\share\tesseract-ocr\4.00\tessdata".   
+Sollten sie WSL nutzen können alternativ, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
+Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet für Tesseract v4 der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\\wsl$\Debian\usr\share\tesseract-ocr\5.00\tessdata".  
 Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und klicken anschließend entweder auf „View Raw“ oder „Download“ und laden das Modell herunter. Jetzt können Sie es aus dem Download-Ordner ausschneiden und in den Tessdata-Ordner einfügen. Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.  
 
 **Welches Modell soll ich auswählen?**
