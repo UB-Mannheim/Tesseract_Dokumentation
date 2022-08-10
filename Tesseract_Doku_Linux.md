@@ -152,6 +152,11 @@ $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> --<oem ocre
 $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
 ```
 
+Tesseract kann nur nicht mit lokal verfügbaren Dateien umgehen sondern auch mit auf entferten Servern liegenden. Dazu wird nur die URL zum jew. Bild benötigt und anstatt dem Pfad zu lokalen Datei verwendet:
+```
+$ tesseract <URL> <Name der Outputdatei> -l <Modell> <gewünschte Outputformate wie pdf txt; mehrere durch Leerzeichen trennen>  
+```
+
 ### 2.2 Verarbeitung mehrerer Bilder  
 Hierfür gibt es drei Optionen:  
 Für alle Optionen zuerst im Ordner der zu verarbeitenden Bild durch Shift + Rechtsklick ein Linux-Fenster öffnen, dadurch wird Pfad automatisch eingefügt.  

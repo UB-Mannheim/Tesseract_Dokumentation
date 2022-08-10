@@ -144,6 +144,11 @@ $ tesseract "C:\Users\muster\Documents\Beispielbilder OCR\bsb-demo.jpg" c:\temp\
 ```
 **Hinweis:** Es können mehrere Modelle verwendet werden, wenn diese durch ein „+“ miteinander verbunden werden.  
 
+Tesseract kann nur nicht mit lokal verfügbaren Dateien umgehen sondern auch mit auf entferten Servern liegenden. Dazu wird nur die URL zum jew. Bild benötigt und anstatt dem Pfad zu lokalen Datei verwendet:
+```
+$ tesseract <URL> <Name der Outputdatei> -l <Modell> <gewünschte Outputformate wie pdf txt; mehrere durch Leerzeichen trennen>  
+```
+
 ## **3. Voraussetzungen für erfolgreiche Texterkennung**  
 - Neigung, Farbigkeit, Kontrast, Layout und Schriftart des Originaldokumentes, Auflösung und Qualität der Bilddatei  
 - Unterstützt werden folgende Formate: BMP, PNM, PNG, JFIF, JPEG, and TIFF.  
