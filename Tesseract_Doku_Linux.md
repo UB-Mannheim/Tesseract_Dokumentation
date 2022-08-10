@@ -172,6 +172,7 @@ Option 1 über find:
 ```
 $ find -name \*.<Bilddateientyp> | while read f; do tesseract -l <Modell> $f ${f%.<Bilddateientyp> }<evtl. Ausgabedatei>; done
 ```
+→ erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
 
 Beispiel:  
 ```
