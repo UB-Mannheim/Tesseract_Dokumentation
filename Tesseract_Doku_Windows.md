@@ -3,7 +3,7 @@
 ## **1. Installation der Software**
 
 ### **1.1 Download von Tesseract über Windows Installer**  
-Die UB Mannheim stellt verschiedene [Tesseract-Installer-Versionen](https://digi.bib.uni-mannheim.de/tesseract/) bereits. Wobei die [Version 5.1](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.1.0.20220510.exe) die aktuellste ist.  
+Die UB Mannheim stellt verschiedene [Tesseract-Installer-Versionen](https://digi.bib.uni-mannheim.de/tesseract/) bereits. Wobei die [Version 5.2](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.2.0.20220712.exe) die aktuellste ist.  
 Sie gehen nun wie folgt vor, um Tesseract unter Windows zu installieren:  
 → Datei speichern  
 → Installation ausführen durch Doppelklick oder Rechtsklick und „Ausführen“  
