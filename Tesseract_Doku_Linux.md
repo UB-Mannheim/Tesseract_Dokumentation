@@ -1,10 +1,14 @@
 # Tesseract für Linux
 
-## 1. Installation der Software
+## Eventuell: **Windows Subsystem for Linux (WSL)** installieren:
+Falls Sie eine Unix Distribution unter Windows nutzen wollen, empfielt sich die Nutzung von [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
+**Falls das Endgerät sowieso Linux nutzt, kann Punkt 1.1 übersprungen werden!**
 
-### 1.1 Eventuell: **Windows Subsystem for Linux (WSL)** installieren:
-**Alternative 1:** Sie können Debian oder Ubuntu einfach als App im Windows Store herunterladen.  
-**Alternative 2:** Oder Sie laden es über die Kommandozeile herunter:  
+**Option 1:** Sie können Debian oder Ubuntu einfach als App im [Windows Store](https://www.microsoft.com/de-de/store/apps/) herunterladen.  
+1. Store öffnen und nach _[Debian](https://apps.microsoft.com/store/detail/debian/9MSVKQC78PK6)_ oder _[Ubuntu](https://apps.microsoft.com/store/detail/9NBLGGH4MSV6)_ suchen
+2. Eine der beiden Distributionen (oder auch beide) installieren
+
+**Option 2:** Oder Sie laden es über die Kommandozeile herunter:  
 → PowerShell aufrufen und eingeben (ggf. als Administrator ausführen): 
 ```
 $ wsl --install
@@ -13,29 +17,60 @@ $ wsl --install
 ```
 $ wsl --install -d <Distribution Name> #(Distribution Name = Name der Linux Distribution)
 ```
-Alle verfügbaren Linux-Distributionen anzeigen:
+Auflisten der Linux-Distributionen:
 ```
-$ wsl --list --online oder wsl -l -o 
-```
-Nach der Installation befolgen Sie diese Schritte:  
-→ PC neustarten  
-→ Nach WSL suchen und ausführen  
-→ Gewünschten Benutzername und Passwort anlegen  
-→ Updaten über die Befehle:  
-```
-$ sudo apt update
-$ Sudo apt ugrade
+# Alle (online) verfügbaren Linux-Distributionen anzeigen:
+    $ wsl --list --online 
+# oder kurz
+    $ wsl -l -o 
+# Alle installierten Linux-Distributionen anzeigen:
+    $ wsl --list 
+# Alle laufenden Linux-Distributionen anzeigen:
+    $ wsl --list --running
 ```
 
-### 1.2 Falls das Endgerät sowieso Linux nutzt, kann Punkt 1.1 übersprungen werden  
- **Installation von Tesseract**  
-→ In Linux-Kommandozeile eingeben:  
+Beenden (terminieren) einer Distribution:
 ```
-$sudo apt install tesseract-ocr
+$ wsl --terminate -d <Distribution Name>
 ```
-→ Das Programm fragt nun, ob man benötigten Speicherplatz verwenden möchte (After this operation, 30.2 MB of additional disk space will be used. Do you want to continue? [Y/n]
+
+Nach der Installation befolgen Sie diese Schritte:  
+1. PC neustarten  
+2. Nach WSL suchen und ausführen  
+3. Gewünschten Benutzername und Passwort anlegen  
+4. Updaten über die Befehle:  
+```
+$ sudo apt update
+$ sudo apt ugrade
+```
+Nun haben Sie ein voll funktionsfähiges Linux innerhalb Windows, dass sie über die Shell steuern können.
+
+
+## 1. Installation der Software
+### **Installation von Tesseract**  
+Der Paketmanager von Ubuntu bietet aktuell (Stand August 2022) nicht die neuste Tesseract Version 5 sondern nur Version 4 an. 
+Daher muss ein zusätliches Repo hinzugefügt werden:
+```
+$ sudo add-apt-repository ppa:alex-p/tesseract-ocr5
+```
+In Linux-Kommandozeile eingeben:  
+```
+$ sudo apt install tesseract-ocr
+```
+→ Das Programm fragt nun, ob man benötigten Speicherplatz verwenden möchte (After this operation, 30.2 MB of additional disk space will be used. Do you want to continue? [Y/n]  
 → Mit Enter bestätigen 
-→ Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
+
+Mit folgendem Befehl lässt sich die Version überprüfen:
+```
+$ tesseract --version
+```
+
+Mit folgendem Befehl lassen sich die installierten Modelle überprüfen:
+```
+$  tesseract --list-langs
+```
+
+Anschließend können die benötigten Sprachen via Link heruntergeladen werden:
 ```
 $ wget <Link>
 ```
@@ -47,12 +82,14 @@ Um den richtigen Link zu erhalten, klicken Sie die gewünschte Sprache in Github
 
 Sie können eine [Liste aller verfügbaren Sprachen und Schriften (Standardmodelle)](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md) auf Github finden.  
 Die Modelle finden Sie unter den folgenden Links:  
-[**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)  
-[**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)  
-[**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)  
-[**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)  
+* [**Schriften (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast/tree/main/script)  
+* [**Sprachen (Fast-Modelle)**](https://github.com/tesseract-ocr/tessdata_fast)  
+* [**Schriften (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best/tree/main/script)  
+* [**Sprachen (Best-Modelle)**](https://github.com/tesseract-ocr/tessdata_best)  
+
 Für historische Drucke laden Sie die [**Spezialmodelle der UB Mannheim**](https://ub-backup.bib.uni-mannheim.de/~stweil/tesstrain/) herunter.  
-→ Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.
+
+→ Alle gewünschten Sprachen und Schriften können jederzeit mit dem obigen Befehl heruntergeladen werden.  
 → vorhandene Sprachen können auch in der Kommandozeile über den Befehl gefunden werden:  
 ```
 $ apt search tesseract- lang
@@ -81,8 +118,8 @@ Beispiel:
 ```
 $ sudo mv GT4HistOCR_0.705_440562_2193500.traineddata GT4HistOCR.traineddata
 ```
-Alternativ können auch in WSL, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
-Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\wsl$\Debian\usr\share\tesseract-ocr\4.00\tessdata".   
+Sollten sie WSL nutzen können alternativ, die Dateien innerhalb der Windows-Benutzeroberfläche abgelegt werden: 
+Geben Sie dafür in den Begriff **„\\wsl$“** als Pfad in den Explorer ein. Anschließend werden Ihnen alle vorhandenen Linux-Distributionen angezeigt. Sowohl unter Ubuntu als auch unter Debian lautet für Tesseract v4 der standardmäßige Pfad zum Tessdata-Ordner, indem Modelle abgelegt werden: "\\\wsl$\Debian\usr\share\tesseract-ocr\5.00\tessdata".  
 Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und klicken anschließend entweder auf „View Raw“ oder „Download“ und laden das Modell herunter. Jetzt können Sie es aus dem Download-Ordner ausschneiden und in den Tessdata-Ordner einfügen. Auch hier sollten Sie bei den Spezialmodellen der UB auf eine handliche Umbenennung setzen.  
 
 **Welches Modell soll ich auswählen?**
@@ -93,16 +130,16 @@ Nun wählen Sie auf Github das gewünschte Schrift- oder Sprachmodell aus und kl
 
 ## 2. Anwendung von Tesseract
 ### 2.1 Verarbeitung einzelner Bilder
-- Zunächst Pfad angeben: dazu einfach im Fenster, in welchem die Dateien abliegen: SHIFT+Rechtsklick  „Hier Linux-Shell öffnen“ 
-- Oder Pfad händisch eingeben, aber Achtung Pfade werden in Linux anders angegeben als unter Windows:
+1. Zunächst Pfad angeben: dazu einfach im Fenster, in welchem die Dateien abliegen: SHIFT+Rechtsklick  „Hier Linux-Shell öffnen“ 
+2. Oder Pfad händisch eingeben, aber Achtung Pfade werden in Linux anders angegeben als unter Windows:
 Beispiel für Windows Pfad: C:\Users\Larissa\Documents\Tesseract Test
 Entsprechende Benennung in Linux: Linux: /mnt/c/Users/Larissa/Documents/Tesseract_Test
-- Geben Sie in der Linux-Kommandozeile ein:
+3. Geben Sie in der Linux-Kommandozeile ein:
 ```
-$ cd “/mnt/c/Users/muster/Documents/Tesseract Test” 
+$ cd "/mnt/c/Users/muster/Documents/Tesseract Test" 
 ```
-→ Bestätigen Sie Ihre Eingabe mit Enter  
-→ Und geben Sie nun den Befehl zur Transkription ein: 
+4. Bestätigen Sie Ihre Eingabe mit Enter  
+5. Und geben Sie nun den Befehl zur Transkription ein: 
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> <gewünschte Formate wie pdf txt; mehrere durch Leerzeichen trennen>
 ```
@@ -113,6 +150,11 @@ $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> --<oem ocre
 → Beispiel: 
 ```
 $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
+```
+
+Tesseract kann nur nicht mit lokal verfügbaren Dateien umgehen sondern auch mit auf entferten Servern liegenden. Dazu wird nur die URL zum jew. Bild benötigt und anstatt dem Pfad zu lokalen Datei verwendet:
+```
+$ tesseract <URL> <Name der Outputdatei> -l <Modell> <gewünschte Outputformate wie pdf txt; mehrere durch Leerzeichen trennen>  
 ```
 
 ### 2.2 Verarbeitung mehrerer Bilder  
@@ -126,42 +168,23 @@ Beispiel:
 ```
 $ find -name \*.jpg
 ```
-1. Option über find: 
+Option 1 über find: 
 ```
 $ find -name \*.<Bilddateientyp> | while read f; do tesseract -l <Modell> $f ${f%.<Bilddateientyp> }<evtl. Ausgabedatei>; done
 ```
-| **Tasten**       | **Aktion**                          | **Bildschirm**  |
-|------------------|-------------------------------------|-----------------|
-| F1               | Zu den Kivy-Einstellungen wechseln  | Alle            |
-| F2               | Zu den App-Einstellungen wechsel    | Alle            |
-| F5               | Zum Home-Bildschirm wechseln        | Alle            |
-| F6               | Zur Modell-Auswahl wechseln         | Alle            |
-| F7               | Zur Modell-Suche wechseln           | Alle            |
-| F9               | Online bzw. Offline schalten        | Alle            |
-| F10              | Randlos schalten                    | Alle            |
-| F11              | Vollbild anschalten                 | Alle            |
-| F11              | Darkmode bzw. Lightmode anschalten  | Alle            |
-| Strg + S         | Einstellungen speichern             | Alle            |
-| Strg + Q         | Verlassen                           | Alle            |
-| Strg + R         | Tesseract Einstellungn zurücksetzen | Image Selection |
-| Strg + O         | Ausgewählten Bilderordner öffnen    | Image Selection |
-| Strg + '+'       | Heranzoomen                         | Image Selection |
-| Strg + '-'       | Herauszoomen                        | Image Selection |
-| Strg + Enter     | Bild-Tagger ausführen               | Image Selection |
-| Strg + Enter     | Modelsuche starten                  | Modellsuche     |
-| Shift + Strg + X | Löscht ausgewählte Bilder           | Image Selection |
-| Shift + Strg + X | Löscht Suchfilter                   | Modellsuche     | erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
+→ erstellt automatisch Textdateien, ansonsten muss vor Semikolon andere Ausgabedatei geschrieben werden
+
 Beispiel:  
 ```
-muster@ubnoteX:/mnt/c/Users/muster/Documents/OCRTests/Test_Stapelverarbeitung$ find -name \*.jpg | while read f; do tesseract -l deu $f ${f%.jpg}; done
+$ find -name \*.jpg | while read f; do tesseract -l deu $f ${f%.jpg}; done
 ```
-2. Option zur parallelen Verabeitung: 
+Option 2 zur parallelen Verabeitung: 
 ```
 $ find -name \*.<Bilddateientyp> -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l <Modell> <eventuell Ausgabedatei>'
 ```
 Beispiel:
 ```
-muster@ubnoteX:/mnt/c/Users/muster/Documents/OCR_Tests/Test_Stapelverarbeitung$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
+$ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
 ```
 3. Option über fd-find (hierfür muss zunächst fd-find installiert werden): 
 ```
@@ -173,5 +196,5 @@ $ fdfind -e <Bilddateientyp> -d 1 --exec tesseract -l <Modell> {} {.} <evtl. Aus
 ```
 Beispiel:  
 ```
-muster@ubnoteX:/mnt/c/Users/muster/Documents/OCRTests/Test_Stapelverarbeitung$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
+$ fdfind -e jpg -d 1 --exec tesseract -l deu {} {.} hocr
 ```
