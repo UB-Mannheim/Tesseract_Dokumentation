@@ -46,7 +46,6 @@ $ sudo apt ugrade
 
 Nun haben Sie ein voll funktionsfähiges Linux innerhalb Windows, dass sie über die Shell steuern können.
 
-
 ## 1. Installation der Software
 ### **Installation von Tesseract**  
 Der Paketmanager von Ubuntu bietet aktuell (Stand August 2022) nicht die neuste Tesseract Version 5 sondern nur Version 4 an. 
@@ -148,7 +147,7 @@ $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> <gewünscht
 ```
 $ tesseract <Name der Inputdatei> <Name der Outputdatei> -l <Modell> --<oem ocrenginemode> --<psm pagesegmode> [Outputformate]
 ```
-→ Beispiel: 
+Beispiel: 
 ```
 $ tesseract img01.jpg ocrimg01 -l frak2021 pdf txt alto
 ```
