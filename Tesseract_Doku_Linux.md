@@ -43,6 +43,7 @@ Nach der Installation befolgen Sie diese Schritte:
 $ sudo apt update
 $ sudo apt ugrade
 ```
+
 Nun haben Sie ein voll funktionsfähiges Linux innerhalb Windows, dass sie über die Shell steuern können.
 
 
@@ -186,7 +187,7 @@ Beispiel:
 ```
 $ find -name \*.jpg -maxdepth 1 | parallel -j 4 --progress 'tesseract {} {.} -l deu pdf'
 ```
-3. Option über fd-find (hierfür muss zunächst fd-find installiert werden): 
+Option 3 über fd-find (hierfür muss zunächst fd-find installiert werden): 
 ```
 $ apt-get install fd-find
 ```
