@@ -4,5 +4,5 @@ Sie finden zu folgenden Themen Anleitungen:
 
 * [Installations- und Nutzungsanleitung (Linux)](./Tesseract_Doku_Linux.md)
 * [Installations- und Nutzungsanleitung (Windows)](./Tesseract_Doku_Windows.md)
-* [Anleitung zum Training mit Tesseract und Tesstrain](https://github.com/th-schmidt/training-with-tesseract)
+* [Anleitung zum Training mit Tesseract und Tesstrain](https://manesspl.github.io/training-with-tesseract/)
 * [Anleitung zur Installation und Nutzung von OCRmyPDF](./OCRmyPDF_Windows_und_Linux.md)
